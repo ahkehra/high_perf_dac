@@ -1,0 +1,7 @@
+id=hp_dac
+name=High Performance DAC
+version=vFINAL
+versionCode=1
+author=akira_vishal
+description=Enable "High Performance DAC" of Qualcomm's WCD9xx DAC to maximize its power and get the best audio quality possible.
+support=https://t.me/AkiraProjects
