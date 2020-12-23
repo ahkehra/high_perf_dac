@@ -12,7 +12,6 @@
 
 ### Version: vFINAL | 1 | Stable
 
-- Inital Module Release
 - Enabled high_perf_mode
 - Enabled cpe_debug_mode
 - Enabled impedance_detect_en
