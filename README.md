@@ -1,6 +1,6 @@
 ##### High Performance DAC | Magisk Module
 
-##### Contact: https://t.me/AkiraProjects
+##### Contact: https://t.me/AkiraRelease
 
 ##### Disclaimer: Naturally, you take all the responsibility for what happens to your device when you start messing around with things. I (Akira) will not be responsible for ANY damage caused to anyone's devices due to the use of this module.
 
@@ -10,7 +10,11 @@
 
 #### - ChangeLog -
 
-### Version: vFINAL | 1 | Stable
+### Version: v2
+
+- Fixed Bugs XD
+
+### Version: v1
 
 - Enabled high_perf_mode
 - Enabled cpe_debug_mode

@@ -22,7 +22,6 @@ if [ "$akira" == "vishal" ]; then
   ui_print "- NOTE:"
   ui_print "• High Performance DAC Still Bug For Other Devices."
   ui_print "• Let Me Know If You Face Any Issues."
-  ui_print "• If I Get Fix Or Something I Will Update This Module Again."
   ui_print ""
   sleep 1
 else
