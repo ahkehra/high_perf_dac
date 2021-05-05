@@ -13,6 +13,8 @@
 ### Version: v2
 
 - Fixed Bugs XD
+- Improve Module
+- Added Logs
 
 ### Version: v1
 

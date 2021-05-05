@@ -23,9 +23,9 @@ if [ "$akira" == "vishal" ]; then
   ui_print "• High Performance DAC Still Bug For Other Devices."
   ui_print "• Let Me Know If You Face Any Issues."
   ui_print ""
-  sleep 1
+  rm -rf /data/high_perf_dac && mkdir -p /data/high_perf_dac && . $MODPATH/high_perf_dac.sh
 else
   ui_print "- Installation High Performance DAC, Failed Wrong Hardware Detected !"
   ui_print ""
   abort
-fi;
+fi
