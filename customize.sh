@@ -17,34 +17,6 @@
 DEBUG=true
 
 ##########################################################################################
-# Replace list
-##########################################################################################
-
-# List all directories you want to directly replace in the system
-# Check the documentations for more info why you would need this
-
-# Construct your list in the following format
-# This is an example
-REPLACE_EXAMPLE="
-/system/app/Youtube
-/system/priv-app/SystemUI
-/system/priv-app/Settings
-/system/framework
-"
-
-# Construct your own list here
-REPLACE="
-"
-
-##########################################################################################
-# Permissions
-##########################################################################################
-
-set_permissions() {
-set_perm $MODPATH/high_perf_dac.sh 0 0 0777 0777
-}
-
-##########################################################################################
 # MMT Extended Logic - Don't modify anything after this
 ##########################################################################################
 
