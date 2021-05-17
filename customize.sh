@@ -15,6 +15,7 @@
 #MAXAPI=30
 #DYNLIB=true
 DEBUG=true
+ASH_STANDALONE=1
 
 ##########################################################################################
 # MMT Extended Logic - Don't modify anything after this
