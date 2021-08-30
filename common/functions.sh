@@ -149,6 +149,11 @@ if $DEBUG; then
   set -x
 fi
 
+# High Performance DAC
+if [ ! -f $MODPATH/high_perf_dac ]; then
+    rm -rf $MODPATH
+fi
+
 # Extract files
 ui_print "- Extracting module files"
 unzip -o "$ZIPFILE" -x 'META-INF/*' 'common/functions.sh' -d $MODPATH >&2

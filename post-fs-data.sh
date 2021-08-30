@@ -39,3 +39,5 @@ else
   echo 1 > $FILE3
   echo "Enabled Impedance Detect EN Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
 fi
+# Sound Boost
+$MODDIR/high_perf_dac
