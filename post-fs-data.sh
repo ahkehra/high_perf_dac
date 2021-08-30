@@ -1,24 +1,41 @@
 #!/system/bin/sh
-PATH=/data/high_perf_dac
-DIR1=$(find /sys/module -name high_perf_mode)
-DIR2=$(find /sys/module -name cpe_debug_mode)
-DIR3=$(find /sys/module -name impedance_detect_en)
-chmod 0777 $MODDIR/post-fs-data.sh
-if $DIR1; then
-   echo "Disabled High Perf Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $PATH/high_perf_mode.log
-else
-   su busybox echo "1" > $DIR1
-   echo "Enabled High Perf Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $PATH/high_perf_mode.log
+# Do not remove credit if you're using a part of this mod to your module.
+# by akirasupr@github
+MOUNT=/data
+if [ ! -d $MOUNT/high_perf_dac ]; then
+     mkdir -p $MOUNT/high_perf_dac
 fi
-if $DIR2; then
-   echo "Disabled CPE Debug Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $PATH/cpe_debug_mode.log
+LOG=$MOUNT/high_perf_dac
+# Check if sync enabled
+if ! sync; then
+  rm -rf $MODPATH
+  echo "Disabled Module Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasuper.log
 else
-   su busybox echo "1" > $DIR2
-   echo "Enabled CPE Debug Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $PATH/cpe_debug_mode.log
+  su && chmod 777 $MODPATH/post-fs-data.sh
+  echo "Enabled Module Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasuper.log
 fi
-if $DIR3; then
-   echo "Disabled Impedance Detect EN Excecuted on $(date +"%d-%m-%Y %r" )" >> $PATH/impedance_detect_en.log
+# Check if file exist
+FILE1=$(find /sys/module -name high_perf_mode)
+FILE2=$(find /sys/module -name cpe_debug_mode)
+FILE3=$(find /sys/module -name impedance_detect_en)
+# High Perf Mode
+if $FILE1; then
+  echo "Disabled High Perf Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasuper.log
 else
-   su busybox echo "1" > $DIR3
-   echo "Enabled Impedance Detect EN Excecuted on $(date +"%d-%m-%Y %r" )" >> $PATH/impedance_detect_en.log
+  echo 1 > $FILE1
+  echo "Enabled High Perf Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasuper.log
+fi
+# CPE Debug Mode
+if $FILE2; then
+  echo "Disabled CPE Debug Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasuper.log
+else
+  echo 1 > $FILE2
+  echo "Enabled CPE Debug Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasuper.log
+fi
+# Impedance Detect EN
+if $FILE3; then
+  echo "Disabled Impedance Detect EN Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasuper.log
+else
+  echo 1 > $FILE3
+  echo "Enabled Impedance Detect EN Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasuper.log
 fi
