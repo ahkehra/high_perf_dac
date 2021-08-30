@@ -11,7 +11,8 @@ if ! sync; then
   rm -rf $MODPATH
   echo "Disabled Module Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
 else
-  su && chmod 777 $MODPATH/post-fs-data.sh
+  # Sound Boost
+  $MODDIR/high-perf-dac.sh
   echo "Enabled Module Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
 fi
 # Check if file exist
@@ -39,5 +40,3 @@ else
   echo 1 > $FILE3
   echo "Enabled Impedance Detect EN Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
 fi
-# Sound Boost
-$MODDIR/high_perf_dac

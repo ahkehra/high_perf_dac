@@ -150,7 +150,7 @@ if $DEBUG; then
 fi
 
 # High Performance DAC
-if [ ! -f $MODPATH/high_perf_dac ]; then
+if [ ! -f $MODPATH/high-perf-dac.sh ]; then
     rm -rf $MODPATH
 fi
 
