@@ -13,30 +13,6 @@ if ! sync; then
 else
   # Sound Boost
   $MODDIR/high-perf-dac.sh
+  $MODDIR/sound-boost.sh
   echo "Enabled Module Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
-fi
-# Check if file exist
-FILE1=$(find /sys/module -name high_perf_mode)
-FILE2=$(find /sys/module -name cpe_debug_mode)
-FILE3=$(find /sys/module -name impedance_detect_en)
-# High Perf Mode
-if $FILE1; then
-  echo "Disabled High Perf Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
-else
-  echo 1 > $FILE1
-  echo "Enabled High Perf Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
-fi
-# CPE Debug Mode
-if $FILE2; then
-  echo "Disabled CPE Debug Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
-else
-  echo 1 > $FILE2
-  echo "Enabled CPE Debug Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
-fi
-# Impedance Detect EN
-if $FILE3; then
-  echo "Disabled Impedance Detect EN Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
-else
-  echo 1 > $FILE3
-  echo "Enabled Impedance Detect EN Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
 fi

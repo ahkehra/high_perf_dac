@@ -1,5 +1,6 @@
 • Version: v3
-- Introduce Sound Boost
+- Introduce Sound Boost ( Kernel Support )
+- Add Universal Support
 - Updated Scripts
 
 • Version: v2

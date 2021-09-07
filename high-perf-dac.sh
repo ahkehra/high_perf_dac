@@ -4,12 +4,28 @@
 MOUNT=/data
 MODDIR=${0%/*}
 LOG=$MOUNT/high_perf_dac
-if [ ! -d /sys/kernel/sound_control ]; then
-    echo "Disabled Sound Boost Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
+# Check if file exist
+FILE1=$(find /sys/module -name high_perf_mode)
+FILE2=$(find /sys/module -name cpe_debug_mode)
+FILE3=$(find /sys/module -name impedance_detect_en)
+# High Perf Mode
+if $FILE1; then
+  echo "Disabled High Perf Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
 else
-    echo "10 10" > /sys/kernel/sound_control/headphone_gain
-    echo 5 > /sys/kernel/sound_control/mic_gain
-    echo 5 > /sys/kernel/sound_control/earpiece_gain
-    echo 5 > /sys/kernel/sound_control/speaker_gain
-    echo "Enabled Sound Boost Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
+  echo 1 > $FILE1
+  echo "Enabled High Perf Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
+fi
+# CPE Debug Mode
+if $FILE2; then
+  echo "Disabled CPE Debug Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
+else
+  echo 1 > $FILE2
+  echo "Enabled CPE Debug Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
+fi
+# Impedance Detect EN
+if $FILE3; then
+  echo "Disabled Impedance Detect EN Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
+else
+  echo 1 > $FILE3
+  echo "Enabled Impedance Detect EN Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
 fi

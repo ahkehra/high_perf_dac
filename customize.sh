@@ -22,6 +22,7 @@ DEBUG=true
 
 set_permissions() {
 set_perm $MODPATH/post-fs-data.sh 0 0 0777 0777
+set_perm $MODPATH/sound-boost.sh 0 0 0777 0777
 set_perm $MODPATH/high-perf-dac.sh 0 0 0777 0777
 }
 

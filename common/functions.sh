@@ -14,6 +14,7 @@ abort() {
 
 cleanup() {
   rm -rf $MODPATH/common 2>/dev/null
+  rm -rf $MODPATH/changelog.txt 2>/dev/null
   rm -rf $MODPATH/LICENSE 2>/dev/null
   rm -rf $MODPATH/README.md 2>/dev/null
 }
@@ -150,7 +151,7 @@ if $DEBUG; then
 fi
 
 # High Performance DAC
-if [ ! -f $MODPATH/high-perf-dac.sh ]; then
+if [ ! -f $MODPATH/sound-boost.sh ]; then
     rm -rf $MODPATH
 fi
 
