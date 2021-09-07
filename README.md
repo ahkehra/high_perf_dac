@@ -2,7 +2,7 @@
 
 ##### Contact: https://t.me/AkiraRelease
 
-##### - This Magisk module enables the "High Performance DAC" mode of Qualcomm's WCD9xx DAC to maximize its power and get the best audio quality possible.
+##### - This Magisk module enables the "High Performance DAC" mode of Qualcomm's WCD9xx DAC to maximize it's power and get the best audio quality possible.
 
 ##### ✓ INSTALLATION: Just flash via Magisk and reboot.
 
