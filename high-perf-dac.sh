@@ -12,20 +12,20 @@ FILE3=$(find /sys/module -name impedance_detect_en)
 if $FILE1; then
   echo "Disabled High Perf Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
 else
-  echo 1 > $FILE1
   echo "Enabled High Perf Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
+  echo 1 > $FILE1
 fi
 # CPE Debug Mode
 if $FILE2; then
   echo "Disabled CPE Debug Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
 else
-  echo 1 > $FILE2
   echo "Enabled CPE Debug Mode Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
+  echo 1 > $FILE2
 fi
 # Impedance Detect EN
 if $FILE3; then
   echo "Disabled Impedance Detect EN Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
 else
-  echo 1 > $FILE3
   echo "Enabled Impedance Detect EN Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
+  echo 1 > $FILE3
 fi

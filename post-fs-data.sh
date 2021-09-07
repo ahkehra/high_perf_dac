@@ -8,11 +8,10 @@ fi
 LOG=$MOUNT/high_perf_dac
 # Check if sync enabled
 if ! sync; then
-  rm -rf $MODPATH
   echo "Disabled Module Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
+  rm -rf $MODPATH
 else
-  # Sound Boost
+  echo "Enabled Module Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
   $MODDIR/high-perf-dac.sh
   $MODDIR/sound-boost.sh
-  echo "Enabled Module Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
 fi
