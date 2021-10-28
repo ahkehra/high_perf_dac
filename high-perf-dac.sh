@@ -2,7 +2,6 @@
 # Do not remove credit if you're using a part of this mod to your module.
 # by akirasupr@github
 MOUNT=/data
-MODDIR=${0%/*}
 LOG=$MOUNT/high_perf_dac
 # Check if file exist
 FILE1=$(find /sys/module -name high_perf_mode)

@@ -14,6 +14,7 @@ model=$(getprop ro.product.system.model 2>/dev/null)
 release=$(getprop ro.system.build.version.release 2>/dev/null)
 hardware=$(getprop ro.hardware 2>/dev/null)
 high_perf_dac() {
+cleanup
 ui_print ""
 ui_print "    ╭━━┳╮╭╮╱╱╱╱╭━━╮ "
 ui_print "    ┃╭╮┃┣╋╋┳┳━╮┃━━╋┳┳━┳━┳┳╮ "
@@ -21,24 +22,21 @@ ui_print "    ┃┣┫┃━┫┃╭┫╋╰╋━━┃┃┃╋┃┻┫╭
 ui_print "    ╰╯╰┻┻┻┻╯╰━━┻━━┻━┫╭┻━┻╯ "
 ui_print "    ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰╯ "
 ui_print ""
-ui_print "- Device: ${model}"
-ui_print "- Android: ${release}"
-ui_print "- Hardware: ${hardware}"
+ui_print "× Device: ${model}"
+ui_print "× Android: ${release}"
+ui_print "× Hardware: ${hardware}"
 ui_print ""
+permissions
 if [ "${hardware}" == "qcom" ]; then
-  ui_print "- Installing High Performance DAC, ✓ Qualcomm Detected"
+  ui_print "• Installing High Performance DAC, ✓ Qualcomm Detected"
   ui_print ""
 else
-  ui_print "- Installation High Performance DAC, ! Failed Kernel Not Supported"
+  ui_print "• Installation High Performance DAC, ! Failed Kernel Not Supported"
   ui_print ""
   abort
 fi
 }
-cleanup
+high_perf_dac
 if [ ! -d $MOUNT/high_perf_dac ]; then
-     high_perf_dac
-     permissions
-     for i in $(find $MODPATH -type f -name "*.sh" -o -name "*.prop" -o -name "*.rule"); do
-     [ -f $i ] && { sed -i -e "/^#/d" -e "/^ *$/d" $i; [ "$(tail -1 $i)" ] && echo "" >> $i; }
      mkdir -p $MOUNT/high_perf_dac
 fi

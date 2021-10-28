@@ -2,8 +2,9 @@
 # Do not remove credit if you're using a part of this mod to your module.
 # by akirasupr@github
 MOUNT=/data
-LOG=$MOUNT/high_perf_dac
+MODDIR=${0%/*}
 # Check if Log folder exist
+LOG=$MOUNT/high_perf_dac
 if ! $LOG; then
   rm -rf $MODPATH
 else
