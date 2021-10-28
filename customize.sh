@@ -5,10 +5,9 @@ cleanup() {
   rm -rf $MODPATH/LICENSE 2>/dev/null
   rm -rf $MODPATH/README.md 2>/dev/null
 }
-MOUNT=/data
-permissions() {
-  set_perm $MODPATH/post-fs-data.sh 0 0 0777 0777
-  set_perm $MODPATH/high-perf-dac.sh 0 0 0777 0777
+MODLOG=/data/high_perf_dac
+permission() {
+  chmod 777 $MODPATH/post-fs-data.sh
 }
 model=$(getprop ro.product.system.model 2>/dev/null)
 release=$(getprop ro.system.build.version.release 2>/dev/null)
@@ -26,7 +25,7 @@ ui_print "× Device: ${model}"
 ui_print "× Android: ${release}"
 ui_print "× Hardware: ${hardware}"
 ui_print ""
-permissions
+permission
 if [ "${hardware}" == "qcom" ]; then
   ui_print "• Installing High Performance DAC, ✓ Qualcomm Detected"
   ui_print ""
@@ -37,6 +36,6 @@ else
 fi
 }
 high_perf_dac
-if [ ! -d $MOUNT/high_perf_dac ]; then
-     mkdir -p $MOUNT/high_perf_dac
+if [ ! -d $MODLOG ]; then
+     mkdir -p $MODLOG
 fi
