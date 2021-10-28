@@ -1,35 +1,44 @@
-##########################################################################################
-#
-# MMT Extended Config Script
-#
-##########################################################################################
-
-##########################################################################################
-# Config Flags
-##########################################################################################
-
-# Uncomment and change 'MINAPI' and 'MAXAPI' to the minimum and maximum android version for your mod
-# Uncomment DYNLIB if you want libs installed to vendor for oreo+ and system for anything older
-# Uncomment DEBUG if you want full debug logs (saved to /sdcard)
-#MINAPI=26
-#MAXAPI=30
-#DYNLIB=true
-DEBUG=true
-
-##########################################################################################
-# Permissions
-##########################################################################################
-
-set_permissions() {
-set_perm $MODPATH/post-fs-data.sh 0 0 0777 0777
-set_perm $MODPATH/sound-boost.sh 0 0 0777 0777
-set_perm $MODPATH/high-perf-dac.sh 0 0 0777 0777
+set -x
+cleanup() {
+  rm -rf $MOUNT/high_perf_dac 2>/dev/null
+  rm -rf $MODPATH/changelog.txt 2>/dev/null
+  rm -rf $MODPATH/LICENSE 2>/dev/null
+  rm -rf $MODPATH/README.md 2>/dev/null
 }
-
-##########################################################################################
-# MMT Extended Logic - Don't modify anything after this
-##########################################################################################
-
-SKIPUNZIP=1
-unzip -qjo "$ZIPFILE" 'common/functions.sh' -d $TMPDIR >&2
-. $TMPDIR/functions.sh
+MOUNT=/data
+permissions() {
+  set_perm $MODPATH/post-fs-data.sh 0 0 0777 0777
+  set_perm $MODPATH/high-perf-dac.sh 0 0 0777 0777
+}
+model=$(getprop ro.product.system.model 2>/dev/null)
+release=$(getprop ro.system.build.version.release 2>/dev/null)
+hardware=$(getprop ro.hardware 2>/dev/null)
+high_perf_dac() {
+ui_print ""
+ui_print "    ╭━━┳╮╭╮╱╱╱╱╭━━╮ "
+ui_print "    ┃╭╮┃┣╋╋┳┳━╮┃━━╋┳┳━┳━┳┳╮ "
+ui_print "    ┃┣┫┃━┫┃╭┫╋╰╋━━┃┃┃╋┃┻┫╭╯ "
+ui_print "    ╰╯╰┻┻┻┻╯╰━━┻━━┻━┫╭┻━┻╯ "
+ui_print "    ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰╯ "
+ui_print ""
+ui_print "- Device: ${model}"
+ui_print "- Android: ${release}"
+ui_print "- Hardware: ${hardware}"
+ui_print ""
+if [ "${hardware}" == "qcom" ]; then
+  ui_print "- Installing High Performance DAC, ✓ Qualcomm Detected"
+  ui_print ""
+else
+  ui_print "- Installation High Performance DAC, ! Failed Kernel Not Supported"
+  ui_print ""
+  abort
+fi
+}
+cleanup
+if [ ! -d $MOUNT/high_perf_dac ]; then
+     high_perf_dac
+     permissions
+     for i in $(find $MODPATH -type f -name "*.sh" -o -name "*.prop" -o -name "*.rule"); do
+     [ -f $i ] && { sed -i -e "/^#/d" -e "/^ *$/d" $i; [ "$(tail -1 $i)" ] && echo "" >> $i; }
+     mkdir -p $MOUNT/high_perf_dac
+fi
