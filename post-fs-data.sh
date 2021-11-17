@@ -31,7 +31,9 @@ else
 fi
 }
 # Check if Log folder exist
-if [ -f $LOG ]; then
+if [ -f $MODLOG ]; then
     install_script
-    echo "Excecuted on $(date +"%d-%m-%Y %r" )" >> $LOG/akirasupr.log
+    echo "Excecuted on $(date +"%d-%m-%Y %r" )" >> $MODLOG/akirasupr.log
+else
+    echo "Excecute Failed on $(date +"%d-%m-%Y %r" )" >> $MODLOG/akirasupr.log
 fi
