@@ -11,7 +11,7 @@ rm -rf $MODPATH/README.md 2>/dev/null
 }
 SET_PERMISSION() {
 set_perm_recursive $MODPATH 0 0 0755 0644
-set_perm $MODPATH/post-fs-data.sh 0 0 0755 0777
+set_perm $MODPATH/post-fs-data.sh 0 0 0777 0777
 }
 MOD_EXTRACT() {
 ui_print "- Extracting module files"
