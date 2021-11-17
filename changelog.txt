@@ -1,3 +1,15 @@
+• Version: v4
+- Removed Sound Boost
+- Removed Universal Support
+- Rewrite Scripts
+- Set minimum magisk to 20.4
+- Removed su/777 permission from post-fs-data. Due to this the Riru module is getting disabled
+- fix issues
+- fix script always fail
+- change post-fs-data permission
+- Removed useless files/folders
+- Updated Scripts
+
 • Version: v3
 - Introduce Sound Boost ( Kernel Support )
 - Add Universal Support
