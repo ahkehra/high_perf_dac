@@ -46,7 +46,6 @@ ui_print "• Hardware : $HARDWARE"
 ui_print ""
 MOD_EXTRACT
 MOD_FUNCTION
-[ ! -d $MODLOG ] && mkdir -p $MODLOG
 }
 if [ ! "$SKIPUNZIP" = "0" ]; then
     set -x

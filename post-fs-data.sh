@@ -3,6 +3,8 @@
 # by akirasupr@github
 MODDIR=${0%/*}
 MODLOG=/data/high_perf_dac
+# Check if folder exist else create new one
+[ ! -d $MODLOG ] && mkdir -p $MODLOG
 # Check if file exist
 FILE1=$(find /sys/module -name high_perf_mode) 
 FILE2=$(find /sys/module -name cpe_debug_mode)
