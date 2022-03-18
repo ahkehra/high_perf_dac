@@ -11,7 +11,7 @@
 - Removed Universal Support
 - Rewrite Scripts
 - Set minimum magisk to 20.4
-- Removed su/777 permission from post-fs-data. Due to this the Ri>
+- Removed su/777 permission from post-fs-data. Due to this the Riru module is getting disabled
 - fix issues
 - fix script always fail
 - change post-fs-data permission
