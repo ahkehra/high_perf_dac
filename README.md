@@ -1,6 +1,8 @@
+# Project Dead
+
 ##### High Performance DAC | Magisk Module
 
-##### Contact: https://t.me/AkiraRelease
+##### Contact: https://t.me/AkiraSuper
 
 ##### - This Magisk module enables the "High Performance DAC" mode of Qualcomm's WCD9xx DAC to maximize it's power and get the best audio quality possible.
 
