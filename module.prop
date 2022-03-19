@@ -1,7 +1,7 @@
 id=high_perf_dac
 name=High Performance DAC
-Codename=Remix
-version=v4
-versionCode=4
+Codename=Score
+version=v5-Final
+versionCode=5
 author=akirasupr
 description=Enable High Performance DAC of Qualcomms WCD9xx DAC to maximize its power and get the best audio quality possible.

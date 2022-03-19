@@ -1,5 +1,5 @@
 SKIPUNZIP=1
-MODLOG=/data/high_perf_dac
+MODLOG="/storage/emulated/0/high_perf_mode.log"
 MODEL=$(getprop ro.product.system.model 2>/dev/null)
 RELEASE=$(getprop ro.system.build.version.release 2>/dev/null)
 HARDWARE=$(getprop ro.hardware 2>/dev/null)
@@ -47,10 +47,5 @@ ui_print ""
 MOD_EXTRACT
 MOD_FUNCTION
 }
-if [ ! "$SKIPUNZIP" = "0" ]; then
-    set -x
-    MOD_PRINT
-else
-    set +x
-    abort
-fi
+set -x
+MOD_PRINT

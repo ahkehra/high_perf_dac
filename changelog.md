@@ -1,3 +1,10 @@
+• Version: v5 | Final
+- revert post-fs-data: loop log folder
+- post-fs-data: update script
+- post-fs-data: change log path to internal storage
+- customize: update
+- module.prop: update
+
 • Version: v4
 - Removed Sound Boost
 - Removed Universal Support
