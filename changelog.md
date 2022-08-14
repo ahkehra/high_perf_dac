@@ -1,9 +1,16 @@
+• Version: v5.5 | Ah shit, here we go again
+- renamed post-fs-data to service
+- service: updated scripts
+- customize: updated
+- module: fixed issues
+- module.prop: updated
+
 • Version: v5 | Final
 - revert post-fs-data: loop log folder
-- post-fs-data: update script
+- post-fs-data: updated scripts 
 - post-fs-data: change log path to internal storage
-- customize: update
-- module.prop: update
+- customize: updated 
+- module.prop: updated 
 
 • Version: v4
 - Removed Sound Boost
