@@ -1,5 +1,3 @@
-# Project Dead
-
 ##### High Performance DAC | Magisk Module
 
 ##### Contact: https://t.me/AkiraSuper
