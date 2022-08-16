@@ -28,7 +28,7 @@ if [ "$HARDWARE" == "qcom" ]; then
   PERMISSION
 else
   ui_print ""
-  ui_print "• Installation High Performance DAC, ! Failed Kernel Not Supported"
+  ui_print "• Installation High Performance DAC, ! Failed because your Kernel is Not Supported"
   ui_print ""
   abort
 fi
