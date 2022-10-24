@@ -12,12 +12,12 @@ rm -rf $MODPATH/README.md 2>/dev/null
 }
 PERMISSION() {
 set_perm_recursive $MODPATH 0 0 0755 0644
-set_perm $MODPATH/service.sh 0 0 0777 0777
+set_perm $MODPATH/post-fs-data.sh 0 0 0777 0777
 }
 EXTRACT() {
 ui_print "- Extracting module files"
 unzip -o "$ZIPFILE" module.prop -d $MODPATH >&2
-unzip -o "$ZIPFILE" service.sh -d $MODPATH >&2
+unzip -o "$ZIPFILE" post-fs-data.sh -d $MODPATH >&2
 }
 FUNCTION() {
 if [ "$HARDWARE" == "qcom" ]; then
