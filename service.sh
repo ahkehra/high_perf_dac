@@ -26,7 +26,7 @@ write() {
 
 # Vars
 MODDIR=${0%/*}
-MODLOG="/sdcard/Android/high_perf_dac.txt"
+MODLOG="/data/akera/high_perf_dac.txt"
 MODDATE=$(date +"%d-%m-%Y %r")
 CODENAME=$(grep_prop Codename $MODPATH/module.prop 2>/dev/null)
 MODEL=$(getprop ro.product.system.model 2>/dev/null)
