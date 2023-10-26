@@ -28,7 +28,7 @@ print
 OUTFD=$2
 ZIPFILE=$3
 SKIPUNZIP=1
-MODLOG=/sdcard/Android/high_perf_dac.txt
+MODLOG=/data/akera/high_perf_dac.txt
 CODENAME=$(grep_prop Codename $MODPATH/module.prop 2>/dev/null)
 MODEL=$(getprop ro.product.system.model 2>/dev/null)
 RELEASE=$(getprop ro.system.build.version.release 2>/dev/null)
