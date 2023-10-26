@@ -13,7 +13,7 @@ ui_print "- Extracting module files"
 unzip -o "$ZIPFILE" module.prop -d $MODPATH >&2
 unzip -o "$ZIPFILE" service.sh -d $MODPATH >&2
 }
-function() {
+detect() {
 if [ "$HARDWARE" == "qcom" ]; then
   ui_print ""
   ui_print "• ✓ Qcom Detected"
@@ -45,5 +45,5 @@ ui_print "• Hardware : $HARDWARE"
 ui_print ""
 extract
 ui_print "• Codename : $CODENAME"
-function
+detect
 }
