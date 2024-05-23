@@ -1,7 +1,7 @@
 id=high_perf_dac
 name=High perf DAC
 Codename=feck
-version=v6
-versionCode=60
-author=reallyakera
+version=v6.5
+versionCode=65
+author=oiakera
 description=This Magisk module enables the "High Performance DAC" mode of Qualcomm's WCD9xx DAC to maximize it's power and get the best audio quality possible.
