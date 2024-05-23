@@ -1,6 +1,6 @@
 #!/system/bin/sh
 # Do not remove credit if you're using a part of this mod to your!
-# by reallyakera
+# by oiakera
 # Function to write values to files
 write() {
     local file="$1"
@@ -50,7 +50,7 @@ echo "×---------------------------------------------------×" >> $MODLOG
 if $FILE1; then
   echo "! Cannot find high_perf_mode file | ${MODDATE}" >> $MODLOG
 else
-  write $FILE1 1
+  busybox write $FILE1 1
   echo "✓ Enabled high_perf_mode | ${MODDATE}" >> $MODLOG
 fi
 
@@ -58,7 +58,7 @@ fi
 if $FILE2; then
   echo "! Cannot find cpe_debug_mode file | ${MODDATE}" >> $MODLOG
 else
-  write $FILE2 1
+  busybox write $FILE2 1
   echo "✓ Enabled cpe_debug_mode | ${MODDATE}" >> $MODLOG
 fi
 
@@ -66,7 +66,7 @@ fi
 if $FILE3; then
   echo "! Cannot find impedance_detect_en file | ${MODDATE}" >> $MODLOG
 else
-  write $FILE2 3
+  busybox write $FILE2 1
   echo "✓ Enabled impedance_detect_en | ${MODDATE}" >> $MODLOG
 fi
 
