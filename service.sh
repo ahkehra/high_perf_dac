@@ -31,7 +31,7 @@ MODDATE=$(date +"%d-%m-%Y %r")
 CODENAME=$(grep_prop Codename $MODPATH/module.prop 2>/dev/null)
 MODEL=$(getprop ro.product.system.model 2>/dev/null)
 RELEASE=$(getprop ro.system.build.version.release 2>/dev/null)
-HARDWARE=$(getprop ro.hardware 2>/dev/null)
+HARDWARE=$(cat /proc/cpuinfo | grep Hardware 2>/dev/null)
 
 # Check if file exist
 FILE1=$(find /sys/module -name high_perf_mode)
