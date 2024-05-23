@@ -14,28 +14,8 @@ unzip -o "$ZIPFILE" module.prop -d $MODPATH >&2
 unzip -o "$ZIPFILE" service.sh -d $MODPATH >&2
 }
 detect() {
-if [ "$HARDWARE" == "qcom" ]; then
-  ui_print ""
-  ui_print "• ✓ Qcom Detected"
-  ui_print ""
-    if [ "$FILE1" && "$FILE2" && "$FILE3" ]; then
-      ui_print ""
-      ui_print "• Installing High perf DAC"
-      ui_print ""
-      remove
-      permission
-    else
-      ui_print ""
-      ui_print "- ! Failed because your Kernel is Not Supported"
-      ui_print ""
-      abort
-    fi
-else
-  ui_print ""
-  ui_print "- ! Shit MTK Detected, Failed"
-  ui_print ""
-  abort
-fi
+! [ "$HARDWARE" == "*Qualcomm*" ] && abort "- ! Shit MTK Detected, Failed"
+! [ "$FILE1" && "$FILE2" && "$FILE3" ] && abort "- ! Failed because your Kernel is Not Supported"
 }
 print() {
 ui_print ""
