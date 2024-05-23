@@ -32,10 +32,7 @@ MODLOG=/data/akera/high_perf_dac.txt
 CODENAME=$(grep_prop Codename $MODPATH/module.prop 2>/dev/null)
 MODEL=$(getprop ro.product.system.model 2>/dev/null)
 RELEASE=$(getprop ro.system.build.version.release 2>/dev/null)
-HARDWARE=$(getprop ro.hardware 2>/dev/null)
-FILE1=$(find /sys/module -name high_perf_mode)
-FILE2=$(find /sys/module -name cpe_debug_mode)
-FILE3=$(find /sys/module -name impedance_detect_en)
+HARDWARE=$(cat /proc/cpuinfo | grep Hardware 2>/dev/null)
 
 mount /data 2>/dev/null
 
