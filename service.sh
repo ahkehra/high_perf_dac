@@ -66,7 +66,7 @@ fi
 if $FILE3; then
   echo "! Cannot find impedance_detect_en file | ${MODDATE}" >> $MODLOG
 else
-  busybox write $FILE2 1
+  busybox write $FILE3 1
   echo "✓ Enabled impedance_detect_en | ${MODDATE}" >> $MODLOG
 fi
 
