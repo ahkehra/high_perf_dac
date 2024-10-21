@@ -1,7 +1,7 @@
 id=high_perf_dac
 name=High Performance DAC
 codename=rift
-version=v7.0
+version=v7.0-beta
 versionCode=70
 author=ahkehra
-description=This Magisk module enables the "High Performance DAC" mode for Qualcomm's WCD9xx DAC, maximizing its power to achieve the best audio quality possible.
+description=This module enables the "High Performance DAC" mode for Qualcomm's WCD9xx DAC, maximizing its power to achieve the best audio quality possible.
