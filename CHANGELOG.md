@@ -1,47 +1,43 @@
-**If you found this helpful, consider supporting the development with a [coffee](nolink). Your contributions, whether through bug reports or pull requests, help keep the project thriving. Every bit of support means the world—thank you!**
+## Changelog – Final Release
 
-### v1-EQ:
-- Initial Release
+### v7.0-beta (Final) | Codename: **Rift**
 
-### v2-Cracker
-- fixed Bugs XD
-- improve Module
-- added Logs
+This release marks the completion of the High Performance DAC module.
 
-### v3-KraKen
-- revert "module: add service.sh and remove post-fs-data.sh" c9e78ea
-- update scripts
-- edit log file name
-- high_perf_dac: Introduce Sound Boost 5c75a2e
+Throughout development, features that could not be consistently verified or reproduced across kernels were removed. The final implementation intentionally avoids unsupported or speculative behavior, which means the module may have no observable effect on devices whose kernels do not expose the required controls.
 
-### v4-Remix
-- removed Sound Boost
-- removed Universal Support
-- rewrite Scripts
-- set minimum magisk to 20.4 d35adc8
-- removed su/777 permission from post-fs-data. Due to this the Riru module is getting disabled a86ffb4
-- fix issues 406a757
-- Removed useless files/folders
-- updated Scripts
-- fix script always fail 5d4e1a9
-- change post-fs-data permission cf20d21
+Key outcomes of the final release include:
 
-### v5-Score
-- post-fs-data: loop log folder
-- rename post-fs-data to service
-- service: update script
-- service: change log path to internal storage
-- customize: update
-- module.prop: update
+* Fully rewritten and stabilized scripts
+* Removal of unsafe permissions and deprecated installation logic
+* Transition to a service-based execution model
+* Cleaned module structure with unnecessary files and legacy code removed
+* Accurate logging and verification behavior
 
-### v5.5-Sonorousness
-***Ah shit, here we go again***
-- renamed post-fs-data to service
-- service: updated scripts
-- customize: updated
-- module: fixed issues
-- module.prop: updated
+The project remains labeled as beta because its behavior depends entirely on kernel implementations, which vary significantly across devices. Some kernels expose audio-related controls that are incomplete, loosely validated, or intended for diagnostic use, which can lead to inconsistent behavior or instability on certain devices. This variability cannot be fully standardized or mitigated at the module level and reflects external kernel constraints rather than unfinished development.
 
-### v6-Feck
-- hotfix
-- reworked script
+At this stage, the module achieves its intended purpose without relying on unsupported assumptions or placebo behavior. No further feature additions are planned.
+
+---
+
+### Project Status
+
+This project is now considered **feature-complete** and **end-of-life (EOL)**.
+
+There are currently no known improvements, features, or architectural changes that can be made without modifying the kernel itself. As such, development has been concluded.
+
+Future updates may occur **only if**:
+
+* New kernel-exposed audio controls become available
+* Android or kernel changes require compatibility fixes
+* Critical bugs are discovered
+
+Otherwise, the module will remain in its current state.
+
+---
+
+### Maintenance Notice
+
+Bug reports, testing feedback, and pull requests are still welcome. However, users should not expect new features or behavioral changes unless they are technically justified and kernel-supported.
+
+This project will remain available as a completed reference implementation rather than an actively evolving module.
