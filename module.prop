@@ -1,7 +1,7 @@
 id=high_perf_dac
 name=High Performance DAC
 codename=rift
-version=v7.0-beta
+version=v7.0
 versionCode=70
 author=ahkehra
-description=This module enables the "High Performance DAC" mode for Qualcomm's WCD9xx DAC, maximizing its power to achieve the best audio quality possible.
+description=Kernel-level audio tuning module for Qualcomm devices that enables existing WCD9xx codec performance modes when supported by the kernel.
