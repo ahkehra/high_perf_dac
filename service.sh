@@ -11,7 +11,7 @@ process_modes() {
     _l() { echo "$1" >> "$mlog"; }
 
     # Write helper
-    _w() { [ -w "$1" ] && echo "$2" > "$1" 2>/dev/null || return 1; }
+    _w() { [ -w "$1" ] && busybox sh -c "echo \"$2\" > \"$1\"" 2>/dev/null || return 1; }
 
     # Init log
     { 
