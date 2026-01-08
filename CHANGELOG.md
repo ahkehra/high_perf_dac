@@ -41,3 +41,16 @@ Otherwise, the module will remain in its current state.
 Bug reports, testing feedback, and pull requests are still welcome. However, users should not expect new features or behavioral changes unless they are technically justified and kernel-supported.
 
 This project will remain available as a completed reference implementation rather than an actively evolving module.
+
+---
+
+### Support
+
+If you find this project useful, consider a coffee for me.
+
+Financial support can be provided via:
+
+* UPI: `ahkehra@oksbi`
+* PayPal: `paypal.me/ahkehra`
+
+Thank you for your support.
