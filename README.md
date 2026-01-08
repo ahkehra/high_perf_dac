@@ -181,3 +181,16 @@ This project prioritizes accuracy over exaggeration.
 If your kernel exposes meaningful audio performance controls, this module may improve stability or consistency. If it does not, the module will do nothing.
 
 That behavior is expected.
+
+---
+
+### Support
+
+If you find this project useful, consider supporting its development.
+Contributions through bug reports, testing, or pull requests are always appreciated and help improve the module over time.
+Optional financial support can be provided via:
+
+* UPI: `ahkehra@oksbi`
+* PayPal: `paypal.me/ahkehra`
+
+Thank you for your support.
