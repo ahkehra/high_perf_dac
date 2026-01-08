@@ -1,6 +1,6 @@
 {
-    "version": "v6",
-    "versionCode": "60",
-    "zipUrl": "https://github.com/ahkehra/high_perf_dac/releases/download/v6/high_perf_dac-v6.zip ",
-    "changelog": "https://raw.githubusercontent.com/ahkehra/high_perf_dac/master/CHANGELOG.md"
+  "version": "v7.0-beta",
+  "versionCode": "070",
+  "zipUrl": "https://github.com/ahkehra/high_perf_dac/releases/download/v7.0-beta/high_perf_dac-v7.0-beta.zip",
+  "changelog": "https://raw.githubusercontent.com/ahkehra/high_perf_dac/master/CHANGELOG.md"
 }
